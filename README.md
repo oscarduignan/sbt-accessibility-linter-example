@@ -14,4 +14,4 @@ sbt a11yInstall
 sbt test
 ```
 
-The tests are located at https://github.com/oscarduignan/sbt-accessibility-linter-example/blob/main/src/test/scala/example/HelloWorldSpec.scala
+The tests are located at [/src/test/scala/example/HelloWorldSpec.scala](/src/test/scala/example/HelloWorldSpec.scala)
