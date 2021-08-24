@@ -16,7 +16,7 @@ class HelloWorldSpec extends AnyFlatSpec with Matchers with AccessibilityLinters
       |</body>
       |</html>""".stripMargin 
   
-  "Example input component" should "have no accessibility violations" in {
-    htmlPage("""<input type="text" aria-label="something">""") should haveNoAccessibilityViolations
+  "Example input component" should "pass accessibility checks" in {
+    htmlPage("""<input type="text">""") should passAccessibilityChecks
   }
 }
