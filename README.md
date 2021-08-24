@@ -13,3 +13,5 @@ sbt a11yExtract
 sbt a11yInstall
 sbt test
 ```
+
+The tests are located at https://github.com/oscarduignan/sbt-accessibility-linter-example/blob/main/src/test/scala/example/HelloWorldSpec.scala
