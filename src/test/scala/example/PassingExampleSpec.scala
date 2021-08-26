@@ -2,11 +2,12 @@ package example
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.sbtaccessibilitylinter.AccessibilityLintersAndMatchers
+import uk.gov.hmrc.scalatestaccessibilitylinter.AccessibilityMatchers
 
-class HelloWorldSpec extends AnyFlatSpec with Matchers with AccessibilityLintersAndMatchers {
+class PassingExampleSpec extends AnyFlatSpec with Matchers with AccessibilityMatchers {
   def htmlPage(body: String): String =
-    s"""<html lang="en">
+    s"""<!DOCTYPE html>
+      |<html lang="en">
       |<head><title>test</title></head>
       |<body>
       |<main>
@@ -17,6 +18,6 @@ class HelloWorldSpec extends AnyFlatSpec with Matchers with AccessibilityLinters
       |</html>""".stripMargin 
   
   "Example input component" should "pass accessibility checks" in {
-    htmlPage("""<input type="text">""") should passAccessibilityChecks
+    htmlPage("""<label>Example: <input type="text"></label>""") should passAccessibilityChecks
   }
 }
