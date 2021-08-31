@@ -8,7 +8,10 @@ ThisBuild / organizationName := "example"
 lazy val root = (project in file("."))
   .settings(
     name := "platui-1173",
-    libraryDependencies += scalaTest % Test,
+    libraryDependencies ++= Seq(
+      scalaTest % Test,
+      scalaTestAccessibilityLinter % Test
+    ),
     Test / parallelExecution := false,
     Test / testOptions ++= Seq(
       Tests.Argument("-o"), // default stdout reporter

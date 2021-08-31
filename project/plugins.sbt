@@ -2,5 +2,3 @@ resolvers += MavenRepository("HMRC-open-artefacts-maven2", "https://open.artefac
 resolvers += Resolver.url("HMRC-open-artefacts-ivy2", url("https://open.artefacts.tax.service.gov.uk/ivy2"))(
   Resolver.ivyStylePatterns
 )
-
-addSbtPlugin("uk.gov.hmrc" % "sbt-accessibility-linter" % "0.10.0-SNAPSHOT")
