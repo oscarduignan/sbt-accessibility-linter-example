@@ -18,6 +18,15 @@ class KnownIssueExampleSpec extends AnyFlatSpec with Matchers with Accessibility
       |</html>""".stripMargin 
   
   "Example input component" should "pass accessibility checks" in {
-    htmlPage("""<input type="text" knownissue>""") should passAccessibilityChecks
+    // this known vnu issue is not always treated as a known issue:
+    //
+    //    htmlPage("""<input type="hidden" readonly>""") should passAccessibilityChecks
+    //
+    // this is because the html hasn't actually been rendered in a browser if it had been
+    // and we had captured the outerHtml of DOM then the snapshot we'd get after would be:
+    // 
+    //    <input type="hidden" readonly="">     and match the known issue regex
+    //
+    htmlPage("""<input type="hidden" readonly="">""") should passAccessibilityChecks
   }
 }
